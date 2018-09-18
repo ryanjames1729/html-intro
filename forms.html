@@ -25,7 +25,12 @@
 
     <script>
       function loadSite(){
-        document.getElementById("welcome").innerHTML = "Welcome " + document.cookie + "!!!";
+        if(document.cookie.length() > -1){
+          document.getElementById("welcome").innerHTML = "Welcome " + document.cookie + "!!!";
+        }
+        else{
+          document.getElementById("welcome").innerHTML = "";
+        }
       }
       function submitForm(form) {
         var name = form.inputbox.value;
