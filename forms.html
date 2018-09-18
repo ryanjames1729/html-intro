@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Using Forms</title>
+  </head>
+  <body  onload="loadSite()">
+    <h1 class="center-align">A Website with a Form</h1>
+    <br>
+    <br>
+    <h3 id="welcome" class="center-align"></h3>
+    <form id="form1">
+      <div class="input-field">
+        <input type="text" id="inputbox">
+        <label class="active" for="name">Name</label>
+      </div>
+      <button class="btn" name="button" onclick="submitForm(this.form)"><i class="large material-icons">send</i></button>
+    </form>
+
+    <script>
+      function loadSite(){
+        document.getElementById("welcome").innerHTML = "Welcome " + document.cookie + "!!!";
+      }
+      function submitForm(form) {
+        var name = form.inputbox.value;
+        document.cookie = name;
+        document.getElementById("welcome").innerHTML = "Welcome " + name + "!!!";
+      }
+    </script>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
+  </body>
+</html>
