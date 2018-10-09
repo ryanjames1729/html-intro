@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Using Forms</title>
   </head>
-  <body  onload="loadSite()">
+  <body onload="loadSite()">
     <h1 class="center-align">A Website with a Form</h1>
     <br>
     <br>
@@ -25,7 +25,7 @@
 
     <script>
       function loadSite(){
-        if(document.cookie.length() > -1){
+        if(document.cookie.length > -1){
           document.getElementById("welcome").innerHTML = "Welcome " + document.cookie + "!!!";
         }
         else{
